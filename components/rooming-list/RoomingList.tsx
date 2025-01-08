@@ -72,7 +72,6 @@ export const RoomingList: React.FC<RoomingListProps> = ({ nbTravelers, selectedI
         // TODO nbTravelers doesn't seem relevant here.
         return <Text>{`There are no rooms for ${nbTravelers} ${pluralize("traveler", nbTravelers)}`}</Text>;
     }
-    console.log(calculateConfigs(nbTravelers))
     const combos =
         calculateConfigs(nbTravelers).map((combination) =>
             Object.entries(combination).reduce<{ count: number; room: Room }[]>((prev, [curr, count]) => {

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyleSheet, Text } from "react-native";
 import InputSpinner from "react-native-input-spinner";
 
@@ -9,13 +8,12 @@ export type SelectProps<T extends string | number> = {
 };
 
 export function Spinner<T extends string | number>({ onChange, value, labelText }: SelectProps<T>) {
-    const [open, setOpen] = useState(false);
     return (
         <>
             {labelText ? <Text style={styles.label}>{labelText}</Text> : null}
             <InputSpinner
                 style={styles.spinner}
-                max={100}
+                max={20}
                 min={1}
                 step={1}
                 colorMax={"#f04048"}

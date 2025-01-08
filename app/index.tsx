@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { RoomingList, Selection, SelectTravelers } from "../components";
 import { useEffect, useState } from "react";
 import { Stack } from "expo-router";
@@ -19,8 +19,10 @@ export default function Index() {
                 }}
             >
                 <SelectTravelers nbTravelers={nbTravelers} setNbTravelers={setNbTravelers} />
-                <RoomingList nbTravelers={nbTravelers} selectedId={selection} setSelection={setSelection} />
-                <Selection selection={selection} />
+                <ScrollView>
+                    <RoomingList nbTravelers={nbTravelers} selectedId={selection} setSelection={setSelection} />
+                    <Selection selection={selection} />
+                </ScrollView>
             </View>
         </>
     );
