@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Select } from "@/ui";
+import { Select, Spinner } from "@/ui";
 
 export type SelectTravelersProps = {
     nbTravelers: number;
@@ -7,14 +7,10 @@ export type SelectTravelersProps = {
 };
 export const SelectTravelers: React.FC<SelectTravelersProps> = ({ nbTravelers, setNbTravelers }) => {
     return (
-        <Select
-            value={nbTravelers}
-            onChange={setNbTravelers}
-            items={Array.from({ length: 5 }).map((item, index) => ({
-                value: index + 1,
-                label: String(index + 1),
-            }))}
-            labelText="How many travelers?"
+        <Spinner
+        value={nbTravelers}
+        onChange={setNbTravelers}
+        labelText="How many travelers?"
         />
     );
 };
